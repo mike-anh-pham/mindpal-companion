@@ -1,4 +1,5 @@
 import { sendMessageToAnthropic } from "@/lib/anthropic";
+import { speakText } from "@/lib/elevenlabs";
 import { InputMode, Message, Settings } from "@/types/chat";
 import { useCallback, useState } from "react";
 
@@ -76,6 +77,11 @@ export const useChatState = () => {
         const allMessages = [...messages, userMessage];
         const response = await sendMessageToAnthropic(allMessages);
         addMessage("assistant", response.content, response.mood);
+
+        // Read response aloud if autoPlay is enabled
+        if (settings.autoPlayResponses) {
+          speakText(response.content);
+        }
       } catch (error) {
         console.error("Failed to get AI response:", error);
         const errorMessage =
@@ -89,7 +95,7 @@ export const useChatState = () => {
         setIsLoading(false);
       }
     },
-    [addMessage, messages]
+    [addMessage, messages, settings.autoPlayResponses]
   );
 
   const sendAudioMessage = useCallback(
