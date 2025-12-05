@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 234 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 234 47% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 234 47% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 262 83% 66%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 234 30% 20%;
+    --muted-foreground: 215 14% 64%;
+
+    --accent: 330 81% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 234 47% 8%;
+
+    --border: 0 0% 100% / 0.1;
+    --input: 0 0% 100% / 0.1;
+    --ring: 262 83% 66%;
+
+    --radius: 0.75rem;
+
+    /* Custom MindPal tokens */
+    --gradient-bg: linear-gradient(180deg, hsl(234 47% 15%) 0%, hsl(220 47% 17%) 50%, hsl(210 72% 22%) 100%);
+    --glass-bg: hsl(234 47% 15% / 0.95);
+    --glass-border: hsl(0 0% 100% / 0.1);
+    --message-user: 262 83% 66%;
+    --message-ai: 0 0% 100% / 0.1;
+    --mood-pill-bg: 262 83% 66% / 0.2;
+    --mood-pill-text: 262 80% 80%;
+
+    --sidebar-background: 234 47% 15% / 0.98;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 262 83% 66%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 234 30% 20%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 0 0% 100% / 0.1;
+    --sidebar-ring: 262 83% 66%;
+  }
+
+  .dark {
+    --background: 234 47% 8%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-glass backdrop-blur-xl border border-glass-border;
+  }
+
+  .gradient-bg {
+    background: var(--gradient-bg);
+  }
+}
+
+@layer utilities {
+  .bg-glass {
+    background-color: hsl(var(--glass-bg));
+  }
+
+  .border-glass-border {
+    border-color: hsl(var(--glass-border));
+  }
+
+  .text-mood-pill {
+    color: hsl(var(--mood-pill-text));
+  }
+
+  .bg-mood-pill {
+    background-color: hsl(var(--mood-pill-bg));
+  }
+}
+
+/* Animations */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce-dots {
+  0%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes waveform {
+  0%, 100% {
+    height: 8px;
+  }
+  50% {
+    height: 24px;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.animate-bounce-dot {
+  animation: bounce-dots 1.4s infinite ease-in-out both;
+}
+
+.animate-bounce-dot-1 {
+  animation-delay: 0s;
+}
+
+.animate-bounce-dot-2 {
+  animation-delay: 0.16s;
+}
+
+.animate-bounce-dot-3 {
+  animation-delay: 0.32s;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.2s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out forwards;
+}
+
+.animate-waveform {
+  animation: waveform 0.6s infinite ease-in-out;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
