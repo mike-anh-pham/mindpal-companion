@@ -1,4 +1,4 @@
-import { Settings, User } from 'lucide-react';
+import { Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface HeaderProps {
@@ -15,25 +15,16 @@ export const Header = ({ onSettingsClick }: HeaderProps) => {
           <h1 className="text-lg font-semibold text-foreground">MindPal</h1>
         </div>
 
-        {/* Right: Settings and Avatar */}
-        <div className="flex items-center gap-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onSettingsClick}
-            aria-label="Open settings"
-            className="text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-          >
-            <Settings className="w-5 h-5" />
-          </Button>
-          
-          <div 
-            className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center"
-            aria-label="User avatar"
-          >
-            <User className="w-4 h-4 text-foreground" />
-          </div>
-        </div>
+        {/* Right: Settings */}
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={onSettingsClick}
+          aria-label="Open settings"
+          className="text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+        >
+          <Settings className="w-5 h-5" />
+        </Button>
       </div>
     </header>
   );
