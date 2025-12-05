@@ -99,8 +99,8 @@ export const InputBar = ({
   }, [handleRecordingStart, handleRecordingEnd]);
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 h-[100px] z-50 bg-glass backdrop-blur-xl border-t border-glass-border">
-      <div className="relative flex flex-col items-center justify-center h-full px-4 max-w-3xl mx-auto">
+    <footer className="fixed bottom-0 left-0 right-0 z-50 bg-glass backdrop-blur-xl border-t border-glass-border input-bar-container">
+      <div className="relative flex flex-col items-center justify-center h-[100px] px-4 max-w-3xl mx-auto">
         {/* Live transcript - positioned above the footer */}
         {isRecording && (transcript || interimTranscript) && (
           <div className="absolute bottom-full left-0 right-0 mb-2 px-4 animate-fade-in">
