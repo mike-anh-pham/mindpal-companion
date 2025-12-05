@@ -1,5 +1,6 @@
 import { Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/Logo';
 
 interface HeaderProps {
   onSettingsClick: () => void;
@@ -11,8 +12,10 @@ export const Header = ({ onSettingsClick }: HeaderProps) => {
       <div className="flex items-center justify-between h-full px-4 md:px-6">
         {/* Left: Logo and Name */}
         <div className="flex items-center gap-3">
-          <span className="text-2xl" role="img" aria-label="MindPal logo">🧠</span>
-          <h1 className="text-lg font-semibold text-foreground">MindPal</h1>
+          <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shadow-sm border border-primary/20">
+            <Logo className="w-6 h-6 text-primary" />
+          </div>
+          <h1 className="text-2xl font-bold tracking-tight text-foreground">MindPal</h1>
         </div>
 
         {/* Right: Settings */}
