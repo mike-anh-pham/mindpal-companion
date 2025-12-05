@@ -74,10 +74,7 @@ export const useChatState = () => {
       try {
         // Get all messages including the new user message for context
         const allMessages = [...messages, userMessage];
-        const response = await sendMessageToAnthropic(
-          allMessages,
-          settings.humorLevel
-        );
+        const response = await sendMessageToAnthropic(allMessages);
         addMessage("assistant", response.content, response.mood);
       } catch (error) {
         console.error("Failed to get AI response:", error);
@@ -92,7 +89,7 @@ export const useChatState = () => {
         setIsLoading(false);
       }
     },
-    [addMessage, messages, settings.humorLevel]
+    [addMessage, messages]
   );
 
   const sendAudioMessage = useCallback(
