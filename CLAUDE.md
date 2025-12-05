@@ -40,3 +40,13 @@ The app is a single-page chat interface:
 ### Path Aliases
 
 Use `@/` to import from `src/` (configured in vite.config.ts)
+
+## Documentation
+
+See `docs/` folder for detailed documentation:
+- `PROJECT_OVERVIEW.md` - Tech stack, features, project structure
+- `ARCHITECTURE.md` - Data flow, state management, component hierarchy
+- `COMPONENTS.md` - Props, features, usage for each component
+- `HOOKS.md` - Custom hooks API reference
+- `STYLING.md` - Theme tokens, animations, utility classes
+- `CONFIGURATION.md` - Config files explanation
