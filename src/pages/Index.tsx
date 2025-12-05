@@ -1,9 +1,9 @@
-import { Header } from '@/components/Header';
-import { ChatArea } from '@/components/ChatArea';
-import { InputBar } from '@/components/InputBar';
-import { SettingsSidebar } from '@/components/SettingsSidebar';
-import { CrisisModal } from '@/components/CrisisModal';
-import { useChatState } from '@/hooks/useChatState';
+import { ChatArea } from "@/components/ChatArea";
+import { CrisisModal } from "@/components/CrisisModal";
+import { Header } from "@/components/Header";
+import { InputBar } from "@/components/InputBar";
+import { SettingsSidebar } from "@/components/SettingsSidebar";
+import { useChatState } from "@/hooks/useChatState";
 
 const Index = () => {
   const {
@@ -13,17 +13,12 @@ const Index = () => {
     isLoading,
     sidebarOpen,
     setSidebarOpen,
-    inputMode,
-    setInputMode,
-    textInput,
-    setTextInput,
     crisisModalOpen,
     setCrisisModalOpen,
     sessionId,
     settings,
     updateSettings,
     sendTextMessage,
-    sendAudioMessage,
     clearSession,
   } = useChatState();
 
@@ -34,16 +29,11 @@ const Index = () => {
       <ChatArea messages={messages} isLoading={isLoading} />
 
       <InputBar
-        inputMode={inputMode}
-        setInputMode={setInputMode}
-        textInput={textInput}
-        setTextInput={setTextInput}
         isRecording={isRecording}
         setIsRecording={setIsRecording}
         isLoading={isLoading}
         humorLevel={settings.humorLevel}
         onSendText={sendTextMessage}
-        onSendAudio={sendAudioMessage}
         onHumorClick={() => setSidebarOpen(true)}
       />
 
