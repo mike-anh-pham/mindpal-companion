@@ -28,10 +28,10 @@ export const Header = ({ onSettingsClick }: HeaderProps) => {
           </Button>
           
           <div 
-            className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center"
+            className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-sm"
             aria-label="User avatar"
           >
-            <User className="w-4 h-4 text-foreground" />
+            <User className="w-4 h-4 text-primary-foreground" />
           </div>
         </div>
       </div>

@@ -114,7 +114,7 @@ export const SettingsSidebar = ({
               
               <div className="flex items-center justify-between">
                 <label className="text-sm text-muted-foreground">Dark mode</label>
-                <Switch checked={true} disabled />
+                <Switch checked={false} disabled />
               </div>
             </section>
 
@@ -154,7 +154,7 @@ export const SettingsSidebar = ({
               <p className="text-sm text-muted-foreground">MindPal v1.0</p>
               <button
                 onClick={onCrisisClick}
-                className="text-sm text-secondary hover:underline"
+                className="text-sm text-accent hover:underline font-medium"
               >
                 Crisis Resources
               </button>
